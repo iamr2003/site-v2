@@ -1,0 +1,18 @@
+---
+export interface Props {
+	initialCount?: number;
+}
+
+const { initialCount = 0 } = Astro.props;
+---
+
+<div x-data="{ val: ${initialCount} }">
+    <div>
+        Hi, I'm an alpine component(BROKEN):
+        <button x-on:click="val--">-</button>
+            <span x-text="val:">{ initialCount }</span>
+        <button x-on:click="val++">+</button>
+        My code is:
+        <img src="sample_alpine.png" />
+    </div>
+</div>

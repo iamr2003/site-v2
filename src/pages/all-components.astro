@@ -1,0 +1,17 @@
+---
+import Sample_React from "../components/all-components/Sample_React.jsx";
+import Sample_Svelte from "../components/all-components/Sample_Svelte.svelte";
+import Sample_Vue from "../components/all-components/Sample_Vue.vue";
+import Sample_Alpine from "../components/all-components/Sample_Alpine.astro";
+---
+
+<html>
+    <body>
+        <main>
+            <Sample_React client:only="react" />
+            <Sample_Svelte client:only="svelte" />
+            <Sample_Vue client:only="vue" />
+            <Sample_Alpine />
+        </main>
+    </body>
+</html>
