@@ -4,21 +4,65 @@ import Sample_Svelte from "../components/all-components/Sample_Svelte.svelte";
 import Sample_Vue from "../components/all-components/Sample_Vue.vue";
 import Sample_Alpine from "../components/all-components/Sample_Alpine.astro";
 import { SampleLit } from "../components/all-components/Sample_Lit";
-import * as Writeup from '../components/all-components/writeup.md';
+import * as Writeup from "../components/all-components/writeup.md";
 
 const Content = Writeup.Content;
 ---
 
 <html>
     <body>
-        
         <main>
-            <Content></Content>
-            <Sample_React client:only="react" />
-            <Sample_Svelte client:only="svelte" />
-            <Sample_Vue client:only="vue" />
-            <Sample_Alpine />
-            <SampleLit client:load />
+            <Content />
+            <div class="row-wrapper">
+                <div class="card">
+                    <Sample_Svelte client:only="svelte" />
+                </div>
+                <!-- <div class="card">
+                    <SampleLit client:load />
+                </div> -->
+                <div class="card">
+                    <Sample_Alpine />
+                </div>
+            </div>
+            <div class="row-wrapper">
+                <div class="card">
+                    <Sample_React client:only="react" />
+                </div>
+                <div class="card">
+                    <Sample_Vue client:only="vue" />
+                </div>
+            </div>
         </main>
     </body>
 </html>
+
+<style is:global>
+    html {
+        background-color:#131516 ;
+        color: rgb(228, 226, 226);
+    }
+    .row-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    .card {
+        /* amazon, 505050 */
+        /* the carbon color: #A3B0BB */
+        /* background-color: #A3B0BB;
+        color: #161819; */
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 5px;
+        /* max-width: 50rem; */
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        /* border-radius: 5%; */
+    }
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+</style>
