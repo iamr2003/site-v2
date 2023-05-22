@@ -17,7 +17,7 @@ export class SampleLit extends LitElement {
     render() {
         return html`
         <div>
-            Hi, I'm a lit component:
+            Hi, I'm a (BROKEN) lit component:
             <button type="button" @click=${this.dec}>-</button>
             ${this.val}
             <button type="button" @click=${this.inc}>+</button>

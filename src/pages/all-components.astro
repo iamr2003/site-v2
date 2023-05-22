@@ -4,11 +4,16 @@ import Sample_Svelte from "../components/all-components/Sample_Svelte.svelte";
 import Sample_Vue from "../components/all-components/Sample_Vue.vue";
 import Sample_Alpine from "../components/all-components/Sample_Alpine.astro";
 import { SampleLit } from "../components/all-components/Sample_Lit";
+import * as Writeup from '../components/all-components/writeup.md';
+
+const Content = Writeup.Content;
 ---
 
 <html>
     <body>
+        
         <main>
+            <Content></Content>
             <Sample_React client:only="react" />
             <Sample_Svelte client:only="svelte" />
             <Sample_Vue client:only="vue" />
