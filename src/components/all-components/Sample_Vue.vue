@@ -9,12 +9,10 @@ export default {
 </script>
 
 <template>
-    <div>
-        Hi, I'm a vue component:
-        <button @click="val--">-</button>
-        {{ val }}
-        <button @click="val++">+</button>
-        My code is:
-        <img src="sample_vue.png" />
-    </div>
+    Hi, I'm a vue component:
+    <button @click="val--">-</button>
+    {{ val }}
+    <button @click="val++">+</button>
+    My code is:
+    <img src="sample_vue.png" />
 </template>
