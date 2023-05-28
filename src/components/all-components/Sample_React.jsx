@@ -10,7 +10,7 @@ export default function Sample_React() {
              {val} 
             <button onClick={() => setVal(val + 1)}>+</button>
             My code is:
-            <img src="sample_react.png"/>
+            <img src="./sample_react.png"/>
         </div>
     );
 }

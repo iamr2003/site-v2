@@ -14,5 +14,5 @@ export default {
     {{ val }}
     <button @click="val++">+</button>
     My code is:
-    <img src="sample_vue.png" />
+    <img src="./sample_vue.png" />
 </template>
