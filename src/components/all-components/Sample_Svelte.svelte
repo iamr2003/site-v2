@@ -10,5 +10,5 @@
     {val}
     <button on:click={inc}>+</button>
     My code is:
-    <img src="./sample_svelte.png" />
+    <img src="sample_svelte.png" />
 </div>
