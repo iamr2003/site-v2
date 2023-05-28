@@ -15,5 +15,4 @@ export default {
     <button @click="val++">+</button>
     My code is:
     <img src="sample_vue.png" />
-    <img src="/images/SuitJacketSelfie" />
 </template>
