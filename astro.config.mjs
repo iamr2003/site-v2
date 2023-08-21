@@ -9,14 +9,16 @@ import vue from "@astrojs/vue";
 import alpinejs from "@astrojs/alpinejs";
 import lit from "@astrojs/lit";
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
 export default defineConfig({
   // integrations: [tailwind()]
   site: 'https://iamr2003.github.io',
-  integrations: [react(), solidJs(), svelte(), vue(), alpinejs(), lit()],
+  integrations: [react(), solidJs(), svelte(), vue(), alpinejs(), lit(), tailwind()],
   vite: {
-      ssr: {
-        external: 'lit/decorators.js',
-      }
+    ssr: {
+      external: 'lit/decorators.js'
+    }
   }
 });

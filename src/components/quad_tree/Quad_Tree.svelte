@@ -25,6 +25,7 @@
     let arr: number[] = [];
 
     let left_segment = 1;
+    let middle_segment= 1;
     let right_segment = 1;
 </script>
 
@@ -57,12 +58,18 @@
                 Left
             </button>
         </div>
+
+        <div style="flex:{middle_segment}">
+            <button on:click={()=>middle_segment++}> Middle</button>
+        </div>
+        
         <div class="black"
         style="flex:{right_segment};">
             b
             <button on:click={()=>right_segment++}>
                 Right
             </button>
+            
         </div>
     </div>
 </div>
@@ -74,7 +81,7 @@
     .split{
         display: flex;
         flex-direction: row;
-        width:500px;
+        width:700px;
     }
     .black {
         background-color: black;
@@ -84,5 +91,7 @@
     .white {
         background-color: beige; 
         width:100%;
+        border-color: black;
+        border-width: 2;
     }
 </style>
