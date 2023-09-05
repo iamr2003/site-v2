@@ -1,24 +1,52 @@
 <html class="bg-background">
   <main>
+    <head>
+      <!-- I don't like doing it like this, I'd prefer a better method that doesn't rely on external services -->
+      <script
+        src="https://kit.fontawesome.com/76ca3f93f4.js"
+        crossorigin="anonymous"
+      ></script>
+    </head>
     <body>
+      <div
+        class="mx-auto rounded-full sm: w-5/6 md:w-2/3 lg:w-1/2 xl:w-1/3 aspect-square overflow-hidden"
+      >
+        <!-- classic issues with imports -->
+        <!-- did manual transforms bc needed slightly more precision -->
+        <img
+          src="haircut_church.jpg"
+          style="transform:scale(1.13) translateY(-4rem) translateX(-2rem);"
+        />
+      </div>
+      <div class="p-5">
+        <div
+          class="sm:text-4xl md:text-5xl xl:text-6xl text-center font-semibold text-text"
+        >
+          Ibrahim Musaddequr Rahman
+        </div>
+        <div
+          class="sm:text-xl md:text-xl p-2 text-text font-normal text-center"
+        >
+          iamr@umich.edu
+        </div>
 
-        <div  class="mx-auto rounded-full sm: w-5/6 md:w-2/3 lg:w-1/2 xl:w-1/3 aspect-square overflow-hidden">
-         <!-- classic issues with imports -->
-         <!-- did manual transforms bc needed slightly more precision -->
-           <img src="haircut_church.jpg" style="transform:scale(1.13) translateY(-4rem) translateX(-2rem);">
-         </div>
-         <div class="p-5">
-           <div class="sm:text-4xl md:text-5xl xl:text-6xl text-center font-semibold text-text">
-            Ibrahim Musaddequr Rahman
-          </div>
-          <div class="sm:text-xl md:text-xl p-2 text-text font-normal text-center">
-            iamr@umich.edu
-          </div>
-
-         </div>
-
+        <!-- resume, linkedin, github icons -->
+        <!--  need responsive icon sizing -->
+        <div class = "mx-auto p-5 grid grid-cols-3 place-content-center gap-2 w-2/3 border-0 text-text">
+          <a class="mx-auto" href="https://drive.google.com/file/d/10SwnS3WB0tCry22XuqJ2YCNAEksCAGoj/view?usp=sharing">
+            <i class="fa-solid fa-file fa-8x">
+           </i>
+           </a>
+          <a class="mx-auto" href="https://www.linkedin.com/in/iamr2003/">
+            <i class="fa-brands fa-linkedin fa-8x"></i>
+          </a>
+          <a class="mx-auto" href="https://github.com/iamr2003">
+            <i class="fa-brands fa-github fa-8x"></i>
+          </a>
+        </div>
+      </div>
     </body>
   </main>
+
+
 </html>
-
-
