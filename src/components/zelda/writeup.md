@@ -1,5 +1,4 @@
 # 494 P1 Zelda Recreation 
-Created by Ibrahim Musaddequr Rahman and Lia Ahmed-Zal 
 ## Personal Contributions
 I built all the enemies AIs and weapons, and designed a new mechanic and level
 ## New Mechanic
