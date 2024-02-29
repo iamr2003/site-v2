@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+---
+import '@/styles/globals.css'
+---
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,7 +41,7 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ibrahim.site</title>
-    <script type="module" crossorigin src="/assets/index.6ea6a34a.js"></script>
+    <script type="module" src="/assets/index.6ea6a34a.js"></script>
     <link rel="stylesheet" href="/assets/index.727855d2.css">
   </head>
   <body>

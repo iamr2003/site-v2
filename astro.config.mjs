@@ -13,9 +13,10 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  // integrations: [tailwind()]
   site: 'https://iamr2003.github.io',
-  integrations: [react(), solidJs(), svelte(), vue(), alpinejs(), lit(), tailwind()],
+  integrations: [react(), solidJs(), svelte(), vue(), alpinejs(), lit(), tailwind({
+    applyBaseStyles: false,
+  })],
   vite: {
     ssr: {
       external: 'lit/decorators.js'

@@ -1,13 +1,56 @@
+---
+import {Input} from "@/components/ui/input"
+import { BentoGrid,BentoGridItem } from "@/components/ui/bento-grid";
+import "@/styles/globals.css"
+---
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
 <html class="bg-background">
     <body>
         <div class="flex p-10">
         <!-- fix color, but only a bit -->
-            <input
+            <!-- <input
                 type="text"
                 class="mx-auto placeholder:text-secondary placeholder:font-bold placeholder:italic p-3 pr-5 pl-5 rounded-full font-bold bg-gray-400 text-secondary"
                 placeholder="Filter Projects By..."
-            />
+            /> -->
+            <Input  type="email" placeholder="Filter Projects By.."/>
+
         </div>
+        
+        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+            {
+                <BentoGridItem title="First" description="Somethings in the first category" className="md:col-span-2"/>
+            }
+            {
+                <BentoGridItem title="Second" description="Some words in the second"/>
+            }
+            {
+                <BentoGridItem title="Third" description="Some hope in the third"/>
+            }
+            {
+                <BentoGridItem title="Fourth" description="Large peace of mind coming from 4" className="md:col-span-2"/>
+            }
+            {
+                <BentoGridItem title="Fifth" description="And a lonely one in the end"/>
+            }
+        </BentoGrid>
         <!-- gotta do bento box of project cards/photos -->
     </body>
 </html>
